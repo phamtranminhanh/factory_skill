@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Traceability"
+  short_description: "Link requirements to tested behavior"
+  default_prompt: "Use $factory-traceability to complete this task with appropriate agents and verified evidence."

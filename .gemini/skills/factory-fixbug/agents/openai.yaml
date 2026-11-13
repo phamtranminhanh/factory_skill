@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Fixbug"
+  short_description: "Fix bugs with before-and-after proof"
+  default_prompt: "Use $factory-fixbug to complete this task with appropriate agents and verified evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Cifix"
+  short_description: "Repair CI using exact failure evidence"
+  default_prompt: "Use $factory-cifix to complete this task with appropriate agents and verified evidence."

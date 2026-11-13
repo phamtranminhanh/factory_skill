@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Refactor"
+  short_description: "Refactor with behavior-preserving checks"
+  default_prompt: "Use $factory-refactor to complete this task with appropriate agents and verified evidence."

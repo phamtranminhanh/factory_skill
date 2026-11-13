@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Resume"
+  short_description: "Resume a factory run without losing evidence"
+  default_prompt: "Use $factory-resume for this recorded Factory task."

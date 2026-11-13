@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Feature"
+  short_description: "Build a feature with verified evidence"
+  default_prompt: "Use $factory-feature to complete this task with appropriate agents and verified evidence."
