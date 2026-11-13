@@ -26,7 +26,7 @@ Do not start coding the app. **Never push or create issues on GitHub without the
 - Every feature must be non-overlapping with the others.
 
 ### 3. Write each issue
-Use `references/issue-template.md`. Each issue must be **detailed enough for a dev to start without asking questions**: title (verb-first), area, priority (P0 MVP-critical → P3 nice-to-have), size (S/M/L), dependencies, suggested role, plus overview, user story, functional requirements (specific rules, limits, states), user flow, testable acceptance criteria, edge cases & error handling, non-functional requirements, technical notes (marked Suggestion), testing notes, out of scope and definition of done. Never leave a section as a one-liner placeholder.
+Use `references/issue-template.md`. Each issue must be **detailed enough for a dev to start without asking questions**: title (verb-first), area, priority (P0 MVP-critical → P3 nice-to-have), size (S/M/L), dependencies, suggested role, plus overview, **user stories** (a named persona, a primary story in a concrete situation, and 1–3 additional stories from other roles), functional requirements (specific rules, limits, states), user flow, a **happy case**, an **unhappy cases** table (3–5 rows of situation → expected behaviour: invalid input, offline, permission denied, limits, failures), testable acceptance criteria, edge cases & error handling, non-functional requirements, technical notes (marked Suggestion), testing notes, out of scope and definition of done. Never leave a section as a one-liner placeholder.
 
 ### 4. Write `INDEX.md`
 - App summary, assumptions, in/out of scope.

@@ -11,8 +11,15 @@
 ## Overview
 Allow sharing documents (PDF, Office files, archives) in chats.
 
-## User story
-As a user, I want to send files like PDFs.
+## User stories
+**Who:** A user sending work or study documents
+
+**Primary story (happy case)**
+> As a user, I want to attach a PDF, Word or Excel file from my phone and send it in a chat, so that I can share a contract or assignment without email.
+
+**Additional stories**
+- As a recipient, I want to see the file name, size and type and tap to open it with an app on my phone, so that I can read it right away.
+- As a user, I want files of dangerous types (like .exe or .apk) to be blocked, so that I am not exposed to malware.
 
 ## Functional requirements
 - Attach menu > Document opens the system file picker
@@ -27,6 +34,19 @@ As a user, I want to send files like PDFs.
 2. Pick a file
 3. Send
 4. Recipient taps to download and open
+
+## Happy case
+The user picks a document under the size limit, it uploads, and the recipient can download and open it.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| File is over 100 MB | Rejected with the size limit shown |
+| File type is executable (.exe, .apk, .bat) | Blocked with a security message |
+| No app can open the file | 'Save to Files' is offered |
+| Download is interrupted | It resumes instead of restarting |
 
 ## Acceptance criteria
 - [ ] File picker with a 100 MB limit

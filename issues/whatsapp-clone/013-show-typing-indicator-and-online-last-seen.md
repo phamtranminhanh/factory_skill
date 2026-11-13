@@ -11,8 +11,15 @@
 ## Overview
 Show live presence signals in the chat header: when the other person is typing, and whether they are online or when they were last seen.
 
-## User story
-As a user, I want to see when a contact is typing or online.
+## User stories
+**Who:** A user in an active, back-and-forth conversation
+
+**Primary story (happy case)**
+> As a user waiting for an answer, I want to see 'typing…' and whether my contact is online or when they were last seen, so that I know whether to wait or call instead.
+
+**Additional stories**
+- As a user who values privacy, I want to hide my last seen from everyone, so that people cannot track my activity.
+- As a user, I want the typing indicator to disappear after a few seconds of inactivity, so that it does not mislead me.
 
 ## Functional requirements
 - 'typing…' appears within 1s of the other user typing and disappears after 3s of inactivity
@@ -25,6 +32,18 @@ As a user, I want to see when a contact is typing or online.
 1. User opens a chat
 2. Sees 'online' under the name
 3. Other user types; header shows 'typing…'
+
+## Happy case
+The user sees 'typing…' while the contact types and 'online' or a correct last-seen time in the header.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The contact's last seen is hidden | Nothing is shown and the viewer's own last seen is also hidden (reciprocal) |
+| The contact's connection drops | Presence expires after 60s and shows last seen, not 'online' |
+| Typing stops | The indicator disappears after 3 seconds |
 
 ## Acceptance criteria
 - [ ] 'typing…' shows within 1s and disappears after 3s idle

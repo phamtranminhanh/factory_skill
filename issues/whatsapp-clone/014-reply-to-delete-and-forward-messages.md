@@ -11,8 +11,16 @@
 ## Overview
 Give users basic control over messages in a chat: reply with a quote, delete mistakes and forward to others.
 
-## User story
-As a user, I want to manage messages so that I can reply and fix mistakes.
+## User stories
+**Who:** A user who makes typos or replies to older messages
+
+**Primary story (happy case)**
+> As a user in a busy chat, I want to reply to a specific message with a quote, so that the other person knows exactly what I'm answering.
+
+**Additional stories**
+- As a user who sent a message to the wrong chat, I want to delete it for everyone within an hour, so that the wrong person does not keep it.
+- As a user, I want to forward a useful message (such as an address) to up to 5 chats at once, so that I do not have to retype it.
+- As a user, I want to copy the text of a message, so that I can paste it elsewhere.
 
 ## Functional requirements
 - Swipe right or long-press > Reply shows a quoted preview above the input; tapping the quote scrolls to the original
@@ -26,6 +34,19 @@ As a user, I want to manage messages so that I can reply and fix mistakes.
 1. Long-press a message
 2. Choose Reply, Delete or Forward
 3. Action completes with visible feedback
+
+## Happy case
+The user replies with a quote, deletes a message for everyone within an hour, and forwards a message to selected chats; each shows the right result to both sides.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The user tries to delete for everyone after 1 hour | Only 'Delete for me' is offered |
+| The recipient is offline during delete for everyone | The deletion applies when they reconnect |
+| The user replies to a message that was deleted | The quote shows 'Message unavailable' |
+| A forward goes to more than 5 chats | The action is blocked with a message about the limit |
 
 ## Acceptance criteria
 - [ ] Swipe to reply quotes the original message

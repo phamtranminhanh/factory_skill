@@ -11,8 +11,15 @@
 ## Overview
 Build the reusable UI building blocks and the main navigation so every screen looks and behaves consistently. Designers deliver tokens and components; mobile devs implement them once.
 
-## User story
-As a user, I want a consistent look and navigation so that the app feels familiar.
+## User stories
+**Who:** Designers, mobile devs and every end user
+
+**Primary story (happy case)**
+> As a mobile developer building a new screen, I want a documented set of themed components (buttons, inputs, avatars, list items), so that I can assemble screens quickly and they look consistent with the rest of the app.
+
+**Additional stories**
+- As a user who uses dark mode at night, I want the app to follow my phone's theme automatically, so that it is comfortable on my eyes.
+- As a user with low vision who sets a large system font, I want text to scale without being cut off, so that I can read every screen.
 
 ## Functional requirements
 - Design tokens: colors, typography scale, spacing, radius, elevation, for light and dark themes
@@ -25,6 +32,18 @@ As a user, I want a consistent look and navigation so that the app feels familia
 1. User opens the app and sees the tab bar
 2. User switches tabs and the selected tab keeps its scroll position
 3. User switches the device to dark mode and the app updates instantly
+
+## Happy case
+The user switches tabs, toggles dark mode or a larger font, and every screen renders consistently with no clipped or unreadable text.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| System font is set to 200% | No text is clipped; layouts scroll or wrap |
+| Device uses a right-to-left language | Layout mirrors correctly |
+| A tiny screen (360dp / iPhone SE) is used | All actions remain reachable without overlap |
 
 ## Acceptance criteria
 - [ ] Tabs for Chats, Calls, Settings exist

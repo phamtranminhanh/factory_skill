@@ -11,8 +11,16 @@
 ## Overview
 Find which of the user's phone contacts already use the app so they can start chatting immediately, without exposing the raw address book to the server.
 
-## User story
-As a user, I want to see which contacts use the app so that I can message them.
+## User stories
+**Who:** A user with 100+ people in their phone address book
+
+**Primary story (happy case)**
+> As a new user, I want the app to tell me which of my phone contacts already use it, so that I can start chatting with them without typing numbers.
+
+**Additional stories**
+- As a privacy-minded user, I want my address book matched using hashed numbers only, so that my contacts' phone numbers are not stored by the company.
+- As a user who denied contacts permission, I want to still start a chat by typing a phone number, so that I am not locked out of the app.
+- As a user who just saved a new friend's number, I want the list to refresh by pull-to-refresh, so that I can chat with them immediately.
 
 ## Functional requirements
 - Request contacts permission with a clear explanation
@@ -26,6 +34,18 @@ As a user, I want to see which contacts use the app so that I can message them.
 1. User taps New chat
 2. Grants contacts permission
 3. Sees matched contacts and taps one to chat
+
+## Happy case
+The user grants contacts access and immediately sees which contacts are on the app; tapping one opens a chat.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| Contacts permission is denied | An explanation and a settings shortcut appear; the user can still type a number to chat |
+| The address book is very large (10,000+) | Sync runs in batches without freezing the app |
+| A contact has no registered account | They show an Invite action, not a chat |
 
 ## Acceptance criteria
 - [ ] With permission, contacts are matched by hashed phone number

@@ -11,8 +11,15 @@
 ## Overview
 Encrypt messages end to end so only the sender and recipients can read them, not even the server.
 
-## User story
-As a user, I want my messages private so that only recipients can read them.
+## User stories
+**Who:** Every user who sends sensitive information
+
+**Primary story (happy case)**
+> As a user sharing private things (health, money, family), I want my messages encrypted so that only me and the recipient can read them, not even the company, so that I can trust the app.
+
+**Additional stories**
+- As a user, I want to compare a safety number or scan a QR code with a contact, so that I can verify there is no eavesdropper.
+- As a user, I want a warning when a contact's security code changes, so that I know if their device or account may have changed.
 
 ## Functional requirements
 - Each device generates identity and pre-keys on registration; public keys uploaded to the server
@@ -28,6 +35,18 @@ As a user, I want my messages private so that only recipients can read them.
 2. App encrypts it per recipient device
 3. Server relays ciphertext
 4. Recipient app decrypts and displays it
+
+## Happy case
+Sender and recipient exchange messages that only they can read, and the server stores only ciphertext.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| A contact's keys change | A warning appears in the chat before the next message |
+| The user reinstalls and loses keys | Old messages cannot be read and a notice explains why |
+| The recipient's one-time keys run out | The last-resort key is used and sending still works |
 
 ## Acceptance criteria
 - [ ] Messages are encrypted on-device and server stores only ciphertext

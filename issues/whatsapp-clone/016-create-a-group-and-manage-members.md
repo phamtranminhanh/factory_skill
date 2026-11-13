@@ -11,8 +11,16 @@
 ## Overview
 Let users create group conversations and manage who is in them, with admin roles.
 
-## User story
-As a user, I want to create groups so that I can talk to many people.
+## User stories
+**Who:** A user organising a family, team or friend group
+
+**Primary story (happy case)**
+> As a user planning a trip, I want to create a group, name it, add a photo and select up to 255 contacts, so that all the participants can talk in one place.
+
+**Additional stories**
+- As a group admin, I want to add or remove members and make others admins, so that I can manage the group and hand it over when I leave.
+- As a group member, I want to leave a group I no longer need, so that I stop receiving its messages.
+- As an admin, I want to restrict who can edit group info or send messages, so that announcements are not buried.
 
 ## Functional requirements
 - Create a group: name (max 25 chars), optional photo and description, select 1–255 members
@@ -27,6 +35,19 @@ As a user, I want to create groups so that I can talk to many people.
 1. New group > select contacts
 2. Set name and photo
 3. Group is created and appears in the chat list
+
+## Happy case
+The creator makes a group with a name and members, and the group appears for all members with admin tools available to admins.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The group reaches the member maximum (256) | 'Group is full' is shown and no one is added |
+| The user adds someone who blocked them | The add is refused with a neutral message |
+| The last admin leaves | The longest-serving member is promoted automatically |
+| Group creation fails (network) | Nothing is half-created and the user can retry |
 
 ## Acceptance criteria
 - [ ] Create group with name, photo and up to 256 members

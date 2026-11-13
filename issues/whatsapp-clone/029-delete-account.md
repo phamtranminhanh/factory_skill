@@ -11,8 +11,15 @@
 ## Overview
 Allow a user to permanently delete their account and personal data, as required by app stores and data-protection laws.
 
-## User story
-As a user, I want to delete my account and data.
+## User stories
+**Who:** A user who wants to leave the service and erase their data
+
+**Primary story (happy case)**
+> As a user who no longer wants the service, I want to delete my account after confirming with a code, so that my profile, messages and media are erased.
+
+**Additional stories**
+- As a user, I want a clear warning of what will be lost, so that I do not delete by mistake.
+- As a group admin deleting my account, I want admin rights to pass to another member, so that my groups keep working.
 
 ## Functional requirements
 - Settings > Account > Delete account with a clear warning of consequences
@@ -27,6 +34,19 @@ As a user, I want to delete my account and data.
 2. Read the warning
 3. Enter OTP
 4. Account deleted and the app returns to the welcome screen
+
+## Happy case
+The user confirms with an OTP, the account is deactivated at once and all personal data is erased within 30 days.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| Wrong or expired OTP during deletion | Deletion does not proceed |
+| The user is the only admin of a group | Admin passes to another member automatically |
+| The user taps Delete by accident | A confirmation with a clear warning is required |
+| The erasure job fails | It retries and is alerted until complete |
 
 ## Acceptance criteria
 - [ ] Confirmation with phone number re-verify

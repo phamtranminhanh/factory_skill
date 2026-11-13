@@ -11,8 +11,16 @@
 ## Overview
 Let a new user create an account using only their phone number, verified by an SMS one-time password (OTP). The phone number is the user's identity.
 
-## User story
-As a new user, I want to sign up with my phone number so that I get an account.
+## User stories
+**Who:** A first-time user who owns a smartphone and no account yet
+
+**Primary story (happy case)**
+> As a new user who has just installed the app, I want to sign up using only my mobile number and a 6-digit SMS code, so that I can start chatting in under a minute without remembering a password.
+
+**Additional stories**
+- As a returning user on a new phone, I want to enter my number and code to get back into my existing account, so that I keep my contacts and identity.
+- As a user whose SMS is slow, I want to request a new code after a 60-second countdown, so that I am not stuck on the verification screen.
+- As the product owner, I want OTP requests rate-limited per number and per IP, so that attackers cannot run up our SMS bill.
 
 ## Functional requirements
 - Screen to choose country code and enter phone number, validated against E.164 format
@@ -28,6 +36,19 @@ As a new user, I want to sign up with my phone number so that I get an account.
 2. Enters country and number, taps Next
 3. Receives SMS and enters the code
 4. Account is created and the user continues to profile setup
+
+## Happy case
+The user enters a valid number, receives the SMS within 30 seconds, enters the correct code and lands on profile setup, signed in.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| User enters a wrong code | 'Incorrect code' appears with attempts left; after 5 failures the user is locked out for 15 minutes |
+| The code expires after 5 minutes | The user is told it expired and can request a new one |
+| An invalid or too-short number is entered | Inline error appears and no SMS is sent |
+| The SMS never arrives | Resend is enabled after 60s; limited to 3 per hour with a clear message |
 
 ## Acceptance criteria
 - [ ] User enters number and receives a 6-digit SMS code

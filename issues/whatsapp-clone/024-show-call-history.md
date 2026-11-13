@@ -11,8 +11,15 @@
 ## Overview
 Show a log of past calls so users can quickly call back.
 
-## User story
-As a user, I want to see past calls.
+## User stories
+**Who:** A user who missed or wants to return a call
+
+**Primary story (happy case)**
+> As a user, I want a Calls list showing incoming, outgoing and missed calls with time and duration, so that I can see who tried to reach me.
+
+**Additional stories**
+- As a user, I want to tap a missed call to call back, so that I can respond in one step.
+- As a user, I want to delete entries or clear the whole history, so that I can keep my call log private.
 
 ## Functional requirements
 - Calls tab lists calls: contact, direction icon (incoming/outgoing/missed), time and duration
@@ -25,6 +32,18 @@ As a user, I want to see past calls.
 1. Open the Calls tab
 2. See recent calls
 3. Tap to call back
+
+## Happy case
+The Calls tab lists every recent call correctly and tapping an entry calls the person back.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The call history fails to load | An error with retry; no entries are lost |
+| A call was from an unknown number | The number is shown instead of a name |
+| The user has no calls yet | An empty state invites them to make one |
 
 ## Acceptance criteria
 - [ ] List of incoming, outgoing and missed calls with duration

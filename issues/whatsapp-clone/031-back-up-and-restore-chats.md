@@ -11,8 +11,15 @@
 ## Overview
 Let users back up their chat history to the cloud and restore it on a new phone.
 
-## User story
-As a user, I want to restore chats on a new phone.
+## User stories
+**Who:** A user changing or losing a phone
+
+**Primary story (happy case)**
+> As a user who bought a new phone, I want to restore my chat history from a backup after verifying my number, so that I do not lose years of conversations.
+
+**Additional stories**
+- As a user, I want automatic daily, weekly or monthly backups on Wi-Fi while charging, so that I never have to remember.
+- As a user, I want to protect the backup with a password or key and be warned that losing it means the backup cannot be recovered, so that my history stays private.
 
 ## Functional requirements
 - Settings > Chats > Backup with manual 'Back up now' and schedule (daily/weekly/monthly)
@@ -28,6 +35,19 @@ As a user, I want to restore chats on a new phone.
 2. App uploads in the background
 3. On a new phone user verifies their number
 4. App offers 'Restore from backup'
+
+## Happy case
+The user backs up, signs in on a new phone, restores, and sees the full history.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| Cloud storage is full | The backup fails with a clear message and no partial backup replaces the old one |
+| The restore is interrupted | It can be resumed |
+| The backup password is forgotten | The user is clearly warned in advance that it cannot be recovered |
+| The backup is from an incompatible version | Restore is refused with an explanation |
 
 ## Acceptance criteria
 - [ ] Encrypted backup to cloud storage on a schedule

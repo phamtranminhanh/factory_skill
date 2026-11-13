@@ -11,8 +11,16 @@
 ## Overview
 Core one-to-one chat: a user opens a conversation with a contact, reads history and sends and receives text messages in real time.
 
-## User story
-As a user, I want to chat one-to-one so that I can talk to a contact.
+## User stories
+**Who:** Any registered user chatting one-to-one
+
+**Primary story (happy case)**
+> As a user, I want to open a chat with a contact, type a message and see it appear immediately with a clear status (sending, sent, failed), so that I know whether it went through.
+
+**Additional stories**
+- As a user on a train with a patchy connection, I want my messages to queue while offline and send automatically when I am back online, so that I do not have to retype them.
+- As a user returning to an old conversation, I want to scroll back through earlier messages that load quickly, so that I can find what we agreed last week.
+- As a user, I want links in messages to be tappable, so that I can open them without copying.
 
 ## Functional requirements
 - Chat screen with message bubbles (own right, other left), date separators and timestamps
@@ -29,6 +37,19 @@ As a user, I want to chat one-to-one so that I can talk to a contact.
 2. Types a message and taps send
 3. Message shows pending then sent
 4. Recipient's device receives it and shows it in real time
+
+## Happy case
+The user types and sends a message, sees it go from pending to sent, and the recipient receives it instantly.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The user is offline when sending | The message stays queued with a clock icon and sends automatically on reconnect |
+| The send fails permanently | The bubble shows a red icon; tap offers Retry or Delete |
+| The app is killed mid-send | Pending messages resume on next launch without duplicates |
+| A message exceeds 4,096 characters | The send button is disabled and a counter explains the limit |
 
 ## Acceptance criteria
 - [ ] Chat screen shows history, newest at bottom, with timestamps

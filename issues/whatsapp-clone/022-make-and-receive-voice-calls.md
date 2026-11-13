@@ -11,8 +11,16 @@
 ## Overview
 Peer-to-peer voice calling between two users over the internet, with call signalling through the app backend.
 
-## User story
-As a user, I want to call a contact over the internet.
+## User stories
+**Who:** Two users who want to talk instead of text
+
+**Primary story (happy case)**
+> As a user, I want to tap a call button in a chat to ring my contact and talk over the internet, so that I can speak to family abroad without paying for a phone call.
+
+**Additional stories**
+- As a callee with the app closed, I want an incoming call to ring my phone like a normal call, so that I do not miss it.
+- As a caller, I want mute and speaker controls and a visible duration, so that I control the call.
+- As a user whose Wi-Fi drops mid-call, I want the app to try to reconnect for 15 seconds before ending, so that a short glitch does not end the call.
 
 ## Functional requirements
 - Call button in chat header starts a call; ringing UI on the callee with Accept/Decline
@@ -29,6 +37,20 @@ As a user, I want to call a contact over the internet.
 2. Callee's phone rings
 3. Callee accepts and the audio connects
 4. Either side ends the call
+
+## Happy case
+The caller rings, the callee accepts, both hear each other clearly, and either side ends the call and it is logged.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The callee does not answer in 60 seconds | The call ends and is logged as missed for both |
+| The callee is busy on another call | The caller sees 'User is busy' |
+| The network drops during the call | The app tries to reconnect for 15 seconds, then ends it with a message |
+| The caller is blocked | The call is rejected without ringing |
+| Microphone permission is denied | The call cannot start and the user is told why |
 
 ## Acceptance criteria
 - [ ] Outgoing and incoming call screens with ring, accept, decline

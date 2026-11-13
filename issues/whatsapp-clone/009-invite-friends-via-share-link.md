@@ -11,8 +11,14 @@
 ## Overview
 Let a user invite friends who are not on the app via the system share sheet.
 
-## User story
-As a user, I want to invite friends so that they can join.
+## User stories
+**Who:** A user whose friends are not on the app yet
+
+**Primary story (happy case)**
+> As a user, I want to send my friends an invite link through any app on my phone (SMS, email, social), so that more of my contacts can join and I can chat with them.
+
+**Additional stories**
+- As a friend who receives the link on an iPhone or Android phone, I want it to open the right store page, so that I can install the app in one tap.
 
 ## Functional requirements
 - 'Invite friends' entry in Settings and in the contacts list
@@ -24,6 +30,18 @@ As a user, I want to invite friends so that they can join.
 1. Settings > Invite friends
 2. Share sheet opens
 3. User picks an app and sends
+
+## Happy case
+The user taps Invite, picks an app, sends the link, and the friend opens the right store page and installs.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| No app can handle sharing | The link is copied to the clipboard with a toast |
+| The link is opened on a desktop browser | A landing page shows both store links |
+| The share is cancelled | Nothing is sent and the user returns to the previous screen |
 
 ## Acceptance criteria
 - [ ] Share sheet opens with an invite message and download link

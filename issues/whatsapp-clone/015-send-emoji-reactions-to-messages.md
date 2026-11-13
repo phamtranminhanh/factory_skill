@@ -11,8 +11,15 @@
 ## Overview
 Allow quick emoji reactions on a message without sending a new message.
 
-## User story
-As a user, I want to react to messages quickly.
+## User stories
+**Who:** A user who wants to acknowledge a message without writing a reply
+
+**Primary story (happy case)**
+> As a user, I want to long-press a message and pick an emoji reaction, so that I can acknowledge it ('👍 got it') without adding another message to the chat.
+
+**Additional stories**
+- As a user, I want to see who reacted to a message in a group, so that I know who has seen and agreed.
+- As a user, I want to change or remove my reaction, so that I can correct a mis-tap.
 
 ## Functional requirements
 - Long-press opens a reaction bar with 6 default emojis and a '+' to open the full picker
@@ -25,6 +32,18 @@ As a user, I want to react to messages quickly.
 1. Long-press a message
 2. Pick an emoji
 3. Both users see it under the message instantly
+
+## Happy case
+The user long-presses a message, picks an emoji, and both users see the reaction instantly under the message.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The target message was deleted | Reacting is disabled |
+| The user is offline | The reaction queues and syncs on reconnect |
+| Two users react at the same moment | Both reactions are stored and shown |
 
 ## Acceptance criteria
 - [ ] Long press opens a reaction picker

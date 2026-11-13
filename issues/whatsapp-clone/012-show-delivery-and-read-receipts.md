@@ -11,8 +11,15 @@
 ## Overview
 Show senders the status of each message: sent, delivered and read, via tick icons.
 
-## User story
-As a sender, I want to know if my message was delivered and read.
+## User stories
+**Who:** A sender waiting for a reply to something time-sensitive
+
+**Primary story (happy case)**
+> As a sender, I want ticks that show whether my message was sent, delivered to their phone, or read, so that I know if my friend has seen my message about meeting at 6 pm.
+
+**Additional stories**
+- As a privacy-minded user, I want to turn off read receipts, so that people cannot see exactly when I read their messages.
+- As a user, I want a Message info screen with exact delivered/read times, so that I can confirm when something was received.
 
 ## Functional requirements
 - One grey tick = server received; two grey ticks = delivered to recipient's device; two blue ticks = read
@@ -25,6 +32,18 @@ As a sender, I want to know if my message was delivered and read.
 1. Sender sends; one tick
 2. Recipient's phone receives; two ticks
 3. Recipient opens the chat; ticks turn blue
+
+## Happy case
+The sender sees one tick when sent, two when delivered, and blue ticks when the recipient reads the message.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The recipient is offline | The sender stays at one tick until delivery |
+| Read receipts are turned off by either user | Blue ticks never appear; delivered ticks still do |
+| Receipt events arrive out of order | The status never moves backwards |
 
 ## Acceptance criteria
 - [ ] One tick = sent, two = delivered, blue two = read

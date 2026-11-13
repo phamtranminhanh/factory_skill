@@ -11,8 +11,15 @@
 ## Overview
 Allow a user to block unwanted contacts so they can no longer message or call them.
 
-## User story
-As a user, I want to block someone so that they cannot contact me.
+## User stories
+**Who:** A user receiving unwanted messages from an ex-partner, spammer or stranger
+
+**Primary story (happy case)**
+> As a user receiving unwanted messages from someone, I want to block that person in two taps from the chat, so that they can no longer message or call me.
+
+**Additional stories**
+- As a user who blocked someone by mistake, I want to see a Blocked list in Settings and unblock from there, so that I can fix it.
+- As a blocked person, I should not be notified, so that the blocker is not put at risk of confrontation.
 
 ## Functional requirements
 - Block from the chat header menu or contact info screen with a confirmation
@@ -27,6 +34,18 @@ As a user, I want to block someone so that they cannot contact me.
 2. Confirm
 3. Chat shows 'You blocked this contact'
 4. Later unblock from Settings > Privacy > Blocked
+
+## Happy case
+The user blocks a contact in two taps, the contact can no longer message or call, and the user can unblock later from Settings.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The block request fails (network) | The user sees an error and the contact is not shown as blocked |
+| The blocked person tries to message or call | Messages are dropped silently and calls are rejected, without notifying them |
+| The user blocks someone in the middle of a call | The call ends immediately |
 
 ## Acceptance criteria
 - [ ] Blocked user cannot send me messages or call me

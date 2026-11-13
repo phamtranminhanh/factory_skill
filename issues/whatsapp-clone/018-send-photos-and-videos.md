@@ -11,8 +11,16 @@
 ## Overview
 Let users share photos and videos in chats, with preview, compression and progress feedback.
 
-## User story
-As a user, I want to share photos and videos.
+## User stories
+**Who:** A user sharing holiday photos or a short video clip
+
+**Primary story (happy case)**
+> As a user, I want to pick up to 30 photos or videos from my gallery or camera, add a caption and send them, so that my friends can see what I saw.
+
+**Additional stories**
+- As a user on a slow connection, I want to see upload progress and cancel or resume it, so that a large video does not waste my data.
+- As a recipient, I want to tap a blurred thumbnail to download and open the media full screen and save it to my gallery, so that I control my data use.
+- As a user on mobile data, I want media to auto-download only on Wi-Fi, so that I do not burn through my data plan.
 
 ## Functional requirements
 - Attach menu > Camera / Gallery, multi-select up to 30 items
@@ -28,6 +36,19 @@ As a user, I want to share photos and videos.
 2. Select photos
 3. Add a caption and send
 4. Recipient taps the thumbnail to view
+
+## Happy case
+The user selects media, adds a caption, sends, sees upload progress finish, and the recipient views it full screen.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| Camera or gallery permission is denied | An explanation with a link to settings |
+| The file is too large or an unsupported format | Rejected before upload with a clear message |
+| The upload is interrupted | Retry resumes from where it stopped |
+| Device storage is low | The user is warned and the download is not started |
 
 ## Acceptance criteria
 - [ ] Pick from gallery or camera, with preview and caption

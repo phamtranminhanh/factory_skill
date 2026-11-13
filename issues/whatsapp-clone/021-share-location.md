@@ -11,8 +11,15 @@
 ## Overview
 Let a user share their current location in a chat.
 
-## User story
-As a user, I want to share my location.
+## User stories
+**Who:** A user meeting a friend or sending directions
+
+**Primary story (happy case)**
+> As a user, I want to send my current location as a map pin in a chat, so that my friend can find me at the cafe without describing the address.
+
+**Additional stories**
+- As a recipient, I want to tap the pin to open it in my maps app for navigation, so that I can get there directly.
+- As a user who denied location permission, I want a clear message with a link to settings, so that I can enable it if I choose.
 
 ## Functional requirements
 - Attach menu > Location asks for location permission
@@ -26,6 +33,18 @@ As a user, I want to share my location.
 2. Confirm position
 3. Send
 4. Recipient taps the map to navigate
+
+## Happy case
+The user sends their current location and the recipient taps the map to navigate.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| Location permission is denied or GPS is off | A message explains and links to settings |
+| Accuracy is poor | A warning is shown before sending |
+| No network for map tiles | The pin shows coordinates as text |
 
 ## Acceptance criteria
 - [ ] Send current location as a map preview

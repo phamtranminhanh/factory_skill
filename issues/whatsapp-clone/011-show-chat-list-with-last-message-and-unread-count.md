@@ -11,8 +11,16 @@
 ## Overview
 The home screen of the app: a list of all conversations sorted by latest activity, with previews and unread counts.
 
-## User story
-As a user, I want an inbox so that I can jump into conversations.
+## User stories
+**Who:** A user with dozens of active conversations
+
+**Primary story (happy case)**
+> As a user who opens the app many times a day, I want a list of all my conversations sorted by latest activity, showing who wrote last, a preview and an unread count, so that I can see at a glance what needs my reply.
+
+**Additional stories**
+- As a user, I want to pin up to 3 important chats at the top, so that I never have to search for my family or my boss.
+- As a user, I want to swipe a chat to archive, mute or delete it, so that I can keep my list tidy.
+- As a first-time user with no chats, I want an empty state that tells me how to start one, so that I am not looking at a blank screen.
 
 ## Functional requirements
 - Row shows avatar, name, last message preview (1 line), time (today HH:mm, yesterday, date), unread badge
@@ -27,6 +35,18 @@ As a user, I want an inbox so that I can jump into conversations.
 1. App opens on Chats tab
 2. User sees conversations
 3. Taps one to open it; unread badge disappears
+
+## Happy case
+The user opens the app, sees chats sorted by latest activity with correct previews and unread badges, and opening a chat clears its badge.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The user has hundreds of chats | The list scrolls smoothly with virtualisation |
+| A chat's last message was deleted | The preview updates to the latest remaining message or an empty state |
+| A message arrives while the user is on the list | The row moves to top with the unread badge, no flicker |
 
 ## Acceptance criteria
 - [ ] Chats sorted by latest activity

@@ -11,8 +11,15 @@
 ## Overview
 Let users decide who can see their personal information and activity.
 
-## User story
-As a user, I want to control who sees my info.
+## User stories
+**Who:** A privacy-conscious user
+
+**Primary story (happy case)**
+> As a user, I want to choose who can see my last seen, profile photo and about (Everyone, My contacts, Nobody), so that strangers cannot look me up.
+
+**Additional stories**
+- As a user, I want to control who can add me to groups, so that I am not added by strangers.
+- As a user, I want my privacy choices to apply immediately on all my devices, so that I am never exposed because of a delay.
 
 ## Functional requirements
 - Settings > Privacy with options for Last seen & online, Profile photo, About: Everyone / My contacts / Nobody
@@ -26,6 +33,18 @@ As a user, I want to control who sees my info.
 1. Settings > Privacy
 2. Change 'Last seen' to 'Nobody'
 3. Other users no longer see last seen
+
+## Happy case
+The user changes a privacy option and other users immediately see only what the setting allows.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| The setting fails to save (network) | The old value is kept and an error is shown |
+| The user hides last seen | They also cannot see others' last seen (reciprocal) |
+| Settings sync to another device | The new value applies there immediately |
 
 ## Acceptance criteria
 - [ ] Choose who sees last seen, photo and about: everyone, contacts or nobody

@@ -11,8 +11,16 @@
 ## Overview
 Notify users of new messages when the app is closed or in the background, using platform push services.
 
-## User story
-As a user, I want alerts when I get messages while the app is closed.
+## User stories
+**Who:** A user who has the app closed or the phone locked
+
+**Primary story (happy case)**
+> As a user whose phone is locked, I want a notification with the sender's name and message preview when a message arrives, so that I can decide whether to reply now.
+
+**Additional stories**
+- As a user, I want to tap the notification to open that exact chat, so that I do not have to find it.
+- As a user, I want to reply or mark as read straight from the notification, so that I can respond quickly.
+- As a user who denied notification permission, I want an in-app banner explaining how to enable it, so that I do not miss messages.
 
 ## Functional requirements
 - Register the device push token on login and refresh on change
@@ -29,6 +37,19 @@ As a user, I want alerts when I get messages while the app is closed.
 2. Message is sent
 3. Push arrives within seconds
 4. Tap opens the chat
+
+## Happy case
+A message arrives while the app is closed, a notification appears in seconds, and tapping it opens that chat.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| Notification permission is denied | An in-app banner explains how to enable it |
+| The push token is invalid or expired | It is removed and a new one is registered on next launch |
+| The message was already read on another device | The notification is dismissed |
+| The chat is muted | No alert is shown |
 
 ## Acceptance criteria
 - [ ] Push arrives within 5s of a message

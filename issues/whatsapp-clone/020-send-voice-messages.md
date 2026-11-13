@@ -11,8 +11,16 @@
 ## Overview
 Record and send short voice notes, with an inline player.
 
-## User story
-As a user, I want to record a voice note.
+## User stories
+**Who:** A user who is driving, walking or has a lot to say
+
+**Primary story (happy case)**
+> As a user, I want to hold the mic button and speak a voice message (up to 15 minutes), so that I can reply when typing is inconvenient.
+
+**Additional stories**
+- As a user, I want to slide to cancel or lock the recording so I can keep talking hands-free, so that I do not send half a message by mistake.
+- As a recipient, I want to play a voice note at 1.5x or 2x speed with a waveform, so that I can listen quickly.
+- As a user, I want my recording saved as a draft if a call interrupts it, so that I do not lose what I said.
 
 ## Functional requirements
 - Press and hold the mic button to record; slide left to cancel; slide up to lock hands-free
@@ -28,6 +36,19 @@ As a user, I want to record a voice note.
 2. Speak
 3. Release to send
 4. Recipient taps play
+
+## Happy case
+The user records a voice note, releases to send, and the recipient plays it with a waveform.
+
+(Steps: see User flow above.)
+
+## Unhappy cases
+| Situation | Expected behaviour |
+|---|---|
+| Microphone permission is denied | An explanation and a settings shortcut appear |
+| A phone call interrupts the recording | The recording is saved as a draft |
+| The recording is shorter than 1 second | It is discarded silently |
+| The user slides to cancel | Nothing is sent |
 
 ## Acceptance criteria
 - [ ] Hold to record, slide to cancel, release to send
