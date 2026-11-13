@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Pr"
+  short_description: "Deliver verified changes as a pull request"
+  default_prompt: "Use $factory-pr for this recorded Factory task."

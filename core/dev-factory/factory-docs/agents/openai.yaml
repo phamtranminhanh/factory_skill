@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Docs"
+  short_description: "Update docs with source-grounded review"
+  default_prompt: "Use $factory-docs to complete this task with appropriate agents and verified evidence."

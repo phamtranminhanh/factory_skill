@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Design"
+  short_description: "Design architecture before implementation"
+  default_prompt: "Use $factory-design to complete this task with appropriate agents and verified evidence."

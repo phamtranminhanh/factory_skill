@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Testgap"
+  short_description: "Add meaningful tests for coverage gaps"
+  default_prompt: "Use $factory-testgap to complete this task with appropriate agents and verified evidence."
