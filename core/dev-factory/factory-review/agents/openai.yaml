@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Review"
+  short_description: "Review code independently with evidence"
+  default_prompt: "Use $factory-review to complete this task with appropriate agents and verified evidence."

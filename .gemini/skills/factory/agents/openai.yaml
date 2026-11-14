@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory"
+  short_description: "Coordinate Codex agents with verified handoffs"
+  default_prompt: "Use $factory to select the right task workflow and deliver verified results."

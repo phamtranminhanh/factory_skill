@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Investigate"
+  short_description: "Investigate causes with cited evidence"
+  default_prompt: "Use $factory-investigate to complete this task with appropriate agents and verified evidence."
